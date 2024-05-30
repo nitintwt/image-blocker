@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3 ,
+  "name": "Image Blocker" ,
+  "description" : "An extension to block and unblock images of a web page" ,
+  "version": "1.0",
+  "background": { "service_worker" : "background.js"},
+  "content_scripts" : [{"matches": ["<all_urls>"] , "js":["content.js"]}],
+  "permissions": ["activeTab","scripting"],
+  "action":{"default_icon": "imageBlocker2.png"}
+}

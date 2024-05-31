@@ -1,12 +1,12 @@
 function toggleImages(imagesBlocked) {
-  const images = document.querySelectorAll("img")
+  const images = document.querySelectorAll( "img , div.css-175oi2r.r-1mlwlqe.r-1udh08x.r-417010.r-1p0dtai.r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af" )
   images.forEach((img) => {
     img.style.display = imagesBlocked ? "none" : ""
   })
 
   if (imagesBlocked) {
     const observer = new MutationObserver(() => {
-      const newImages = document.querySelectorAll("img")
+      const newImages = document.querySelectorAll("img , div.css-175oi2r.r-1mlwlqe.r-1udh08x.r-417010.r-1p0dtai.r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af")
       newImages.forEach((img) => {
         img.style.display = "none"
       })
@@ -28,4 +28,3 @@ chrome.storage.local.get("imagesBlocked", (data) => {
     document.addEventListener('DOMContentLoaded', () => toggleImages(data.imagesBlocked))
   }
 })
-
